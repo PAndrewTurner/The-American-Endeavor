@@ -80,6 +80,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Sidebar header home link
+  const sidebarHomeLink = document.querySelector('.sidebar-home-link');
+  if (sidebarHomeLink) {
+    sidebarHomeLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      showSection('home');
+    });
+  }
+
   // Homepage card and overview card clicks
   document.querySelectorAll('.home-card, .overview-card').forEach(card => {
     card.addEventListener('click', (e) => {
