@@ -506,6 +506,7 @@ li strong {
 /* ===== ABOUT THE AUTHOR ===== */
 .about-hero {
   text-align: center;
+  margin-top: 2rem;
   margin-bottom: 2.5rem;
 }
 
