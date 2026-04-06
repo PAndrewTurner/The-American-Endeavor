@@ -504,9 +504,12 @@ li strong {
 }
 
 /* ===== ABOUT THE AUTHOR ===== */
+#about > h2 {
+  margin-bottom: 2rem;
+}
+
 .about-hero {
   text-align: center;
-  padding-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
 
