@@ -119,7 +119,6 @@ body {
   width: 40px;
   height: auto;
   margin-bottom: 0.5rem;
-  filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff);
 }
 
 .toc-header h2 {
@@ -254,55 +253,13 @@ body {
 /* ===== MAIN CONTENT ===== */
 .main-content {
   max-width: 760px;
-  margin: 0 auto;
   padding: 0 2rem;
-  margin-left: calc(var(--toc-width) + 48px);
-  margin-right: auto;
+  margin-left: var(--toc-width);
+  margin-right: 0;
+  /* Center in the space right of sidebar */
+  margin-left: calc(var(--toc-width) + ((100vw - var(--toc-width) - 760px) / 2));
 }
 
-/* ===== DARK MODE TOGGLE ===== */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 24px;
-  z-index: 200;
-  background: var(--navy);
-  color: var(--gold);
-  border: 2px solid var(--gold);
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-}
-
-.theme-toggle:hover {
-  background: var(--gold);
-  color: var(--navy);
-  transform: scale(1.1);
-}
-
-/* ===== READING TIME ===== */
-.reading-time {
-  position: fixed;
-  top: 20px;
-  right: 80px;
-  z-index: 200;
-  background: var(--navy);
-  color: var(--gold);
-  border: 2px solid var(--gold);
-  border-radius: 22px;
-  padding: 0.4rem 1rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-}
 
 /* ===== HERO SECTION ===== */
 .hero {
@@ -316,9 +273,9 @@ body {
   position: relative;
   background: linear-gradient(170deg, var(--navy-dark) 0%, var(--navy) 40%, var(--navy-light) 100%);
   color: #fff;
-  margin-left: calc(-1 * (var(--toc-width) + 48px) - 2rem);
-  margin-right: -2rem;
-  padding-left: calc(var(--toc-width) + 48px + 2rem);
+  width: calc(100vw - var(--toc-width));
+  margin-left: calc(-1 * ((100vw - var(--toc-width) - 760px) / 2) - 2rem);
+  margin-right: calc(-1 * ((100vw - var(--toc-width) - 760px) / 2) - 2rem);
 }
 
 .hero-logo {
@@ -394,9 +351,10 @@ body {
 
 /* ===== SECTION CATEGORY HEROES ===== */
 .category-hero {
-  margin-left: calc(-1 * (var(--toc-width) + 48px) - 2rem);
-  margin-right: -2rem;
-  padding: 5rem 2rem 5rem calc(var(--toc-width) + 48px + 2rem);
+  width: calc(100vw - var(--toc-width));
+  margin-left: calc(-1 * ((100vw - var(--toc-width) - 760px) / 2) - 2rem);
+  margin-right: calc(-1 * ((100vw - var(--toc-width) - 760px) / 2) - 2rem);
+  padding: 5rem 2rem;
   background: linear-gradient(135deg, var(--navy-dark), var(--navy-light));
   color: #fff;
   text-align: center;
@@ -627,7 +585,7 @@ body {
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--gold);
+  border: 4px solid var(--navy);
   margin-bottom: 1rem;
 }
 
@@ -759,9 +717,9 @@ body {
   color: var(--gray-300);
   text-align: center;
   padding: 3rem 2rem;
-  margin-left: calc(-1 * (var(--toc-width) + 48px) - 2rem);
-  margin-right: -2rem;
-  padding-left: calc(var(--toc-width) + 48px + 2rem);
+  width: calc(100vw - var(--toc-width));
+  margin-left: calc(-1 * ((100vw - var(--toc-width) - 760px) / 2) - 2rem);
+  margin-right: calc(-1 * ((100vw - var(--toc-width) - 760px) / 2) - 2rem);
 }
 
 .site-footer p {
@@ -796,6 +754,7 @@ body {
   .hero,
   .category-hero,
   .site-footer {
+    width: auto;
     margin-left: -2rem;
     margin-right: -2rem;
     padding-left: 2rem;
@@ -874,6 +833,7 @@ body {
 
 <!-- Reading Progress Bar -->
 <div class="progress-bar" id="progressBar"></div>
+
 
 <!-- Mobile TOC Toggle -->
 <button class="mobile-toc-toggle" id="mobileTocToggle" aria-label="Table of contents">&#9776;</button>
@@ -1850,33 +1810,6 @@ document.addEventListener('DOMContentLoaded', () => {
       ticking = true;
     }
   });
-
-  // ===== DARK MODE TOGGLE =====
-  const themeToggle = document.getElementById('themeToggle');
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    themeToggle.textContent = '\u2600'; // sun
-  }
-  themeToggle.addEventListener('click', () => {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    if (isDark) {
-      document.documentElement.removeAttribute('data-theme');
-      themeToggle.textContent = '\u263E'; // moon
-      localStorage.setItem('theme', 'light');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      themeToggle.textContent = '\u2600'; // sun
-      localStorage.setItem('theme', 'dark');
-    }
-  });
-
-  // ===== READING TIME ESTIMATE =====
-  const readingTimeEl = document.getElementById('readingTime');
-  const text = document.querySelector('.main-content').textContent;
-  const wordCount = text.trim().split(/\s+/).length;
-  const minutes = Math.ceil(wordCount / 230);
-  readingTimeEl.textContent = minutes + ' min read';
 
   // ===== INTERSECTION OBSERVER: FADE-IN =====
   const fadeEls = document.querySelectorAll('.fade-in');
