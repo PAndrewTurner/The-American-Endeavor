@@ -661,11 +661,6 @@ body[data-page="closing"] a[data-nav="closing"] {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.back-to-top.visible {
   opacity: 1;
   transform: translateY(0);
 }
