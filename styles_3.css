@@ -5,6 +5,17 @@
   box-sizing: border-box;
 }
 
+/* ===== REDUCED MOTION (a11y / vestibular safety) ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto !important; }
+}
+
 :root {
   --navy: #1a2332;
   --navy-light: #243044;

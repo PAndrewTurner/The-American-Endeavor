@@ -5,31 +5,122 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-  <title>About the Author | The American Endeavor</title>
-  <meta name="description" content="About Paul Andrew Turner — Corporate Finance Consultant, machine learning engineer, and policy analyst.">
-  <meta name="author" content="Paul Andrew Turner Jr.">
-  <link rel="canonical" href="https://pandrewturner.github.io/The-American-Endeavor/about.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="About the Author | The American Endeavor">
-  <meta property="og:description" content="Meet Paul Andrew Turner Jr. — the author behind The American Endeavor.">
-  <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://pandrewturner.github.io/The-American-Endeavor/about.html">
-  <meta property="og:image" content="https://pandrewturner.github.io/The-American-Endeavor/American Endeavor_v2.png">
-  <meta property="og:site_name" content="The American Endeavor">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About the Author | The American Endeavor">
-  <meta name="twitter:description" content="Meet Paul Andrew Turner Jr. — the author behind The American Endeavor.">
-  <meta name="twitter:image" content="https://pandrewturner.github.io/The-American-Endeavor/American Endeavor_v2.png">
+  <title>Page Not Found | The American Endeavor</title>
+  <meta name="description" content="The page you are looking for cannot be found.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://pandrewturner.github.io/The-American-Endeavor/404.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles_3.css">
+
+  <style>
+    .error-hero {
+      min-height: calc(100vh - 220px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: var(--white);
+    }
+    .error-hero .error-code {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: clamp(6rem, 18vw, 12rem);
+      font-weight: 900;
+      line-height: 1;
+      color: var(--gold);
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    .error-hero h1 {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      color: var(--white);
+      margin-bottom: 1rem;
+      max-width: 700px;
+    }
+    .error-hero p {
+      font-size: 1.15rem;
+      color: var(--gray-300);
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .error-btn {
+      display: inline-block;
+      padding: 0.85rem 1.75rem;
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: transform 0.2s, background 0.2s, color 0.2s;
+    }
+    .error-btn-primary {
+      background: var(--gold);
+      color: var(--navy-dark);
+      border: 2px solid var(--gold);
+    }
+    .error-btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    .error-btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+    .error-btn-secondary:hover {
+      background: var(--white);
+      color: var(--navy-dark);
+      transform: translateY(-2px);
+    }
+    .error-quick-links {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+    .error-quick-links h2 {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+    .quick-link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .quick-link-grid a {
+      padding: 1rem;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .quick-link-grid a:hover {
+      background: var(--white);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
-<body data-page="about">
+<body data-page="404">
 
 <nav class="top-nav">
   <div class="top-nav-inner">
@@ -112,24 +203,27 @@
   </div>
 </nav>
 
-<div class="main-content">
-  <section class="content-section fade-in" style="padding-top: 3rem;">
-    <h2>About the Author</h2>
-    <div class="about-hero">
-      <br>
-      <img src="Headshot.jpg" alt="Paul Andrew Turner Jr.">
-      <h3 class="about-name">Paul Andrew Turner, J.M., M.A., M.S.</h3>
-      <p class="about-location">Orlando, Florida</p>
-    </div>
-    <p>Paul Andrew Turner is a Corporate Finance FP&amp;A Consultant, machine learning engineer, and policy analyst based in Orlando, Florida. He specializes in the intersection of advanced machine learning, macroeconomic data, and global policy.</p>
-    <p>Andrew currently drives strategic planning and financial operations at Verizon, focusing on customer profitability, credit policy, and predictive modeling. A dedicated technologist, he architects and develops machine learning models both professionally and in his personal research. His corporate work is highly pragmatic, utilizing these advanced ML techniques to manage multi-million-dollar risk portfolios and forecast economic realities. He brings a quantitative, law-schooled rigor to complex challenges, backed by a Master of Arts in Economics, a Juris Master in Financial Regulation &amp; Compliance Law, and a Master of Science in Financial Technology.</p>
-    <p>Beyond the spreadsheet and the codebase, Andrew is a voracious reader, an active writer, and a dedicated advocate. He publishes data-driven analyses on the U.S. economy and geopolitical shifts, and actively volunteers his skills as an official event photographer for Orlando Pride. A lifelong outdoorsman with a deep commitment to community service, he has achieved the rank of Eagle Scout and is a recipient of the Vigil Honor within the Order of the Arrow. Whether engineering predictive algorithms, dissecting global economics and foreign affairs, or out on the water kayaking, Andrew brings a rigorous, data-driven approach to leaving systems fundamentally better than he found them.</p>
-  </section>
+<section class="error-hero">
+  <div class="error-code">404</div>
+  <h1>Page Not Found.</h1>
+  <p>The page you were looking for doesn&rsquo;t exist&mdash;or has moved. The American story is not finished, and neither is this site. Let&rsquo;s get you back on course.</p>
+  <div class="error-actions">
+    <a href="index.html" class="error-btn error-btn-primary">&larr; Return Home</a>
+    <a href="preamble.html" class="error-btn error-btn-secondary">Read the Preamble</a>
+  </div>
+</section>
 
-  <nav class="section-nav">
-    <a href="index.html">&larr; Home</a>
-    <a href="preamble.html" class="next">Preamble &rarr;</a>
-  </nav>
+<div class="error-quick-links">
+  <h2>Or jump to a section</h2>
+  <div class="quick-link-grid">
+    <a href="about.html">About the Author</a>
+    <a href="democracy.html">Democracy &amp; Civil Rights</a>
+    <a href="economy.html">The Economy</a>
+    <a href="digital.html">Digital Frontier</a>
+    <a href="security.html">Security &amp; Environment</a>
+    <a href="foreign-policy.html">Foreign Policy</a>
+    <a href="closing.html">A Closing Word</a>
+  </div>
 </div>
 
 <footer class="site-footer">
@@ -137,10 +231,8 @@
   <p>&copy; 2025 The American Endeavor. All rights reserved.</p>
 </footer>
 
-<button class="back-to-top" id="backToTop" aria-label="Back to top">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
-</button>
-
 <script src="nav_3.js"></script>
 </body>
 </html>
+</content>
+</invoke>
